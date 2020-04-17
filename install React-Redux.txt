@@ -1,0 +1,25 @@
+========== install React ==========
+npx create-react-app <project name>
+
+
+========== install Redux ==========
+npm install redux				// Redux
+add chrome extention "Redux DevTools"		// расширение "Redux DevTools" для Хром
+npm install react-redux				// redux для React
+npm install --save-dev redux-devtools		// devtools для связи с chrome extentions "Redux DevTools"
+
+
+========== install Redux-thunk ==========
+npm install redux-thunk				// Midleware Redux for side effects (https://github.com/reduxjs/redux-thunk)
+import thunk from 'redux-thunk';		// in createStore.js
+
+
+
+========== Advanced store setup =========	//https://github.com/zalmoxisus/redux-devtools-extension
+import { createStore, applyMiddleware, compose } from 'redux';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+export const store = createStore(
+    reducer, 
+    composeEnhancers(applyMiddleware(thunk))
+);

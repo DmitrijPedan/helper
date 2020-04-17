@@ -1,0 +1,120 @@
+================================
+ZSH
+
+apt update
+apt-get install -y zsh
+
+curl -L http://install.ohmyz.sh | sh
+
+chsh -s /bin/zsh
+shutdown -r 0
+
+apt install -y vim
+vim .zshrc
+
+THEME="dst"
+
+exec bash
+exec zsh
+
+==================================
+Utilites
+
+apt install -y htop     // монитор системных ресурсов Linux
+apt install -y mc	// 
+apt install -y make	// создание команд
+==================================
+Docker
+
+sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+docker -v
+
+====================================
+Docker Compose
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+++++++++++++++++++++++++++++++++++++
+Linux user policy для доступа Docker
+
+sudo groupadd docker
+
+sudo usermod -aG docker $USER
+
+shutdown -r 0
+
+adduser --gecos "web user" --shell /bin/bash --disabled-password --uid 1000 www
+
+
+
+
+=======================================
+
+Изменение прав папки app которая создается при билде контейнера
+
+sudo chown $USER:$USER . -R
+изменить владельца (chANGE ownER) для всего (.) в текущей папке рекурсивно по всем папкам (-R)  // $USER - текущий юзер 
+=======================================
+
+
+Ключи для сервера 
+
+========================================
+
+ssh-keygen -t rsa
+
+cat .ssh/id_rsa.pub
+========================================
+
+install SWAP
+
+sudo swapon --show
+
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+sudo nano /etc/fstab
+>> /swapfile swap swap defaults 0 0
+
+sudo swapon --show
+
+========================================
+
+mkdir /var/www && cd /var/www
+
+========================================
+
+sudo docker run -it --rm --name certbot \
+            -v "/etc/letsencrypt:/etc/letsencrypt" \
+            -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+            -p 80:80  certbot/certbot certonly
+
+1
+oleg.levchenko@
+A
+Y

@@ -1,0 +1,27 @@
+===================================
+Live Server
+ritwickdey.liveserver
+publisher:"Ritwick Dey"
+===================================
+Git Graph
+mhutchie.git-graph
+mhutchie
+===================================
+npm
+eg2.vscode-npm-script
+publisher:"egamma"
+===================================
+Vetur
+octref.vetur
+publisher:"Pine Wu"
+===================================
+Material Icon Theme
+pkief.material-icon-theme
+publisher:"Philipp Kief"
+===================================
+Bracket Pair Colorizer
+coenraads.bracket-pair-colorizer
+publisher:"CoenraadS"
+===================================
+
+

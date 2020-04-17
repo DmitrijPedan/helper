@@ -1,0 +1,66 @@
+
+npm init -y
+npm install laravel-mix --save-dev                        (--save-dev  = -D)
+cp node_modules/laravel-mix/setup/webpack.mix.js ./
+
+	Head over to your webpack.mix.js file:
+	const mix = require('laravel-mix');
+
+	mix.js('src/app.js', 'dist')
+   		.sass('src/app.scss', 'dist')
+   		.setPublicPath('dist');
+
+mkdir src 
+touch src/app.js  
+touch src/app.scss
+
+package.json: (add scripts):
+	"scripts": {
+    	"dev": "npm run development",
+    	"development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    	"watch": "npm run development -- --watch",
+    	"hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    	"prod": "npm run production",
+    	"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+	}
+
+npm install cross-env --save-dev
+
+===== Workflow with Laravel =====
+Step 1: Install Laravel
+laravel new my-app
+
+Step 2: Install Node Dependencies
+npm install
+
+Step 3: Visit webpack.mix.js
+	const mix = require('laravel-mix');
+	mix.js('resources/js/app.js', 'public/js')
+    		.sass('resources/sass/app.scss', 'public/css');
+
+Step 4: Compilation
+node_modules/.bin/webpack --config=node_modules/laravel-mix/setup/webpack.config.js
+
+npm run dev   - скрипт из package.json
+
+
+
+npm run watch
+
+==== bootstrap ====
+
+npm i bootstrap 
+npm i jquery 
+npm i popper.js
+
+npm i laravel-mix cross-env -D
+
+
+	in   .js:
+	try {
+    		require('jquery');
+    		require('popper.js');
+    		require('bootstrap')
+	} catch(e) {
+    		console.error(e);
+	}

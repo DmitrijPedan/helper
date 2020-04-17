@@ -1,0 +1,23 @@
+https://www.digitalocean.com/community/tutorials/node-js-ubuntu-16-04-ru#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D1%80%D0%B8-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D0%B8-nvm
+
+
+
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+$ source ~/.profile
+
+посмотреть версии:
+$ nvm ls-remote
+
+установить нужную версию:
+$ nvm install 12.16.2
+
+использовать нужную версию:
+$ nvm use 6.0.0
+
+текущая версия:
+$ node -v
+
+список версий:
+$ nvm ls
+

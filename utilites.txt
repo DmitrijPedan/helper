@@ -1,0 +1,33 @@
+Utilites
+
+$ sudo apt install hardinfo      // графический диспетчер устройств 
+$ sudo apt install -y htop       // монитор системных ресурсов Linux
+$ sudo apt install -y mc	        // коммандер
+$ sudo apt install -y make	    // создание команд
+$ sudo snap install postman     // postman
+
+Cdemu (CD/DVD images):
+sudo add-apt-repository ppa:cdemu/ppa
+sudo apt-get update
+sudo apt-get install cdemu-daemon cdemu-client gcdemu
+
+
+ZSH
+
+$ apt update
+$ apt-get install -y zsh
+
+$ curl -L http://install.ohmyz.sh | sh
+
+$ chsh -s /bin/zsh
+$ shutdown -r 0
+
+
+
+$ apt install -y vim
+$ vim .zshrc
+
+THEME="dst"
+
+$ exec bash
+$ exec zsh

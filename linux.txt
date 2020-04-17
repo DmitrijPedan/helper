@@ -1,0 +1,16 @@
+=====================================================
+НАСТРОЙКА GNOME
+Gnome-tweak-tool:
+
+sudo apt install gnome-tweak-tool
+Шрифты:
+заголовок окна: ubuntu-light 9
+интерфейс:      ubuntu-regular 9
+документ:       sans-regular 9
+моношир:        ubuntu-mono-regular 12
+scale:          0.9   
+
+=====================================================
+sudo apt-get install chrome-gnome-shell
+gnome-shell --version
+install dash to panel
