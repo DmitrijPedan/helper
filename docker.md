@@ -1,20 +1,30 @@
 ## Docker
 
 **Посмотреть список локальных images:**
-```$ docker images```
+```
+$ docker images
+```
 
 **Создать image из Dockerfile с именем 'image-name' (-t - имя (тэг); . из текущей директории):**
 *если повторно собрать этот образ с с таким же именем то в списке образов появится образ без имени (это предыдущий образ)*
-```$ docker build -t image-name .```
+```
+$ docker build -t image-name .
+```
 
 **Запустить image (создать контейнер) из образа 'image-name':**
-```$ docker run image-name```
+```
+$ docker run image-name
+```
 
 **Удалить image (параметром нужно передать имя или ID):**
-```$ docker rmi image-name```
+```
+$ docker rmi image-name
+```
 
 **Удалить все image (параметром нужно передать список ID):**
-```$ docker rmi $(docker images -q)```
+```
+$ docker rmi $(docker images -q)
+```
 
 **Дополнительные ключи для docker run:** 
 - --name container-name // присвоить контейнеру имя container-name, если не указать - Docker даст свое имя;
@@ -26,33 +36,55 @@
 - -v db_myapp:/usr/src/myapp/db   //прикрутить volume db_myapp к директории /usr/src/myapp/db контейнера;
 
 **Например запустить image (создать контейнер) с именем 'container-name', удалить контейнер после завершения, пробросить порт, задать часовой пояс, пробросить директорию:**
-```$ docker run --name container-name -d --rm -p 8080:8080 -e TZ=Europe/Kiev -v /home/dima/projects/myapp/db:/usr/src/myapp/db image-name```
+```
+$ docker run --name container-name -d --rm -p 8080:8080 -e TZ=Europe/Kiev -v /home/dima/projects/myapp/db:/usr/src/myapp/db image-name
+```
 
 **Посмотреть работающие контейнеры:**
-```$ docker ps```
+```
+$ docker ps
+```
 
 **Посмотреть все контейнеры (в т.ч. те которые уже отработали):**
-```$ docker ps -a```
+```
+$ docker ps -a
+```
 
 **Посмотреть все контейнеры и вернуть только их ID:**
-```$ docker ps -a -q```
+```
+$ docker ps -a -q
+```
 
 **Остановить контейнер (параметром нужно передать имя контейнера или его ID):**
-```$ docker stop container-name```
-```$ docker stop 1e0c7ccd00041```
+```
+$ docker stop container-name
+```
+```
+$ docker stop 1e0c7ccd00041
+```
 
 **Удалить контейнер (параметром нужно передать имя контейнера или его ID):**
-```$ docker rm container-name```
-```$ docker rm 1e0c7ccd00041```
+```
+$ docker rm container-name
+```
+```
+$ docker rm 1e0c7ccd00041
+```
 
 **Удалить все контейнеры по ID (параметром передаем список ID результат выполнения docker ps -a -q):**
-```$ docker rm $(docker ps -a -q)```
+```
+$ docker rm $(docker ps -a -q)
+```
 
 **Создать volume 'db_myapp' (volume это обычная директория в системе которую можно присоединить к любому контейнеру):**
-```$ docker volume create db_myapp```
+```
+$ docker volume create db_myapp
+```
 
 **Посмотреть список всех volumes в системе:**
-```$ docker volume ls```
+```
+$ docker volume ls
+```
 
 ### Описание Dockerfile:
 ```
