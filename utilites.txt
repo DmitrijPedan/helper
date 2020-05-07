@@ -2,9 +2,9 @@ Utilites
 
 $ sudo apt install hardinfo      // графический диспетчер устройств 
 $ sudo apt install -y htop       // монитор системных ресурсов Linux
-$ sudo apt install -y mc	        // коммандер
-$ sudo apt install -y make	    // создание команд
-$ sudo snap install postman     // postman
+$ sudo apt install -y mc	     // коммандер
+$ sudo apt install -y make	     // создание команд
+$ sudo snap install postman      // postman
 
 Cdemu (CD/DVD images):
 sudo add-apt-repository ppa:cdemu/ppa
@@ -22,12 +22,15 @@ $ curl -L http://install.ohmyz.sh | sh
 $ chsh -s /bin/zsh
 $ shutdown -r 0
 
+$ sudo apt-get install fonts-powerline
 
+$ vim .zshrc // отредактировать файл
+THEME="agnoster"
 
-$ apt install -y vim
-$ vim .zshrc
+// for node and npm добавить в файл zshrc:
+export NVM_DIR=~/.nvm
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-THEME="dst"
-
-$ exec bash
+// переключение оболочек
+$ exec bash  
 $ exec zsh

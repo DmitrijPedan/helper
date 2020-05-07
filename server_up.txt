@@ -1,29 +1,3 @@
-================================
-ZSH
-
-apt update
-apt-get install -y zsh
-
-curl -L http://install.ohmyz.sh | sh
-
-chsh -s /bin/zsh
-shutdown -r 0
-
-apt install -y vim
-vim .zshrc
-
-THEME="dst"
-
-exec bash
-exec zsh
-
-==================================
-Utilites
-
-apt install -y htop     // монитор системных ресурсов Linux
-apt install -y mc	// 
-apt install -y make	// создание команд
-==================================
 Docker
 
 sudo apt-get update
